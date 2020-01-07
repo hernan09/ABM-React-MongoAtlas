@@ -129,17 +129,17 @@ class App extends Component {
 <div className="modal fade" id="exampleModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div className="modal-dialog" role="document">
     <div className="modal-content">
-      <div className="modal-header">
+      {/* <div className="modal-header">
         <h5 className="modal-title" id="exampleModalLabel">{this.state.item}</h5>
         <button type="button" className="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-      </div>
+      </div> */}
       <div className="modal-body">
-     <div class="wrapper">
-        <div class="card">
+     <div className="wrapper">
+        <div className="card">
           <h1>
-            <span class="enclosed">Cut</span>out
+    <span className="enclosed">{this.state.item}</span>{this.state.price}
           </h1>
         </div>
      </div>
