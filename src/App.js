@@ -136,7 +136,13 @@ class App extends Component {
         </button>
       </div>
       <div className="modal-body">
-      {this.state.price}
+     <div class="wrapper">
+        <div class="card">
+          <h1>
+            <span class="enclosed">Cut</span>out
+          </h1>
+        </div>
+     </div>
       </div>
     </div>
   </div>
