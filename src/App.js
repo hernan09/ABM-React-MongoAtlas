@@ -139,7 +139,7 @@ class App extends Component {
      <div className="wrapper">
         <div className="card">
           <h1>
-    <span className="enclosed">{this.state.item}</span>{this.state.price}
+             <span className="enclosed">{this.state.item}</span>{this.state.price}
           </h1>
         </div>
      </div>
