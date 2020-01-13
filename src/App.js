@@ -15,6 +15,7 @@ class App extends Component {
     super();
     this.state = {
       objs : [],
+      id:String,
       load : false,
       item: String,
       price:String,
@@ -72,6 +73,7 @@ class App extends Component {
     this.setState({
       item:data.name,
       price:data.Price,
+      id:data._id,
       load: true
     })
    })
@@ -101,16 +103,42 @@ class App extends Component {
 
 }
 
+handleSubmit2 = (e) => {
+  e.preventDefault();
+
+  let obj = {
+    name:e.target[0].value,
+    Price:e.target[1].value
+  }
+  console.log(obj)
+  
+  fetch(`http://localhost:4000/cuentas/${this.state.id}`, {
+    method: 'PUT',
+    body: JSON.stringify(obj), // data can be `string` or {object}!
+    headers:{
+      'Content-Type': 'application/json'
+    }
+  }).then(res => res.json())
+  .catch(error => console.error('Error:', error))
+  .then(response => {
+    window.location.reload()
+  });
+  
+  
+  
+
+}
+
   render(){
      const styles = this.state.load ? {display:'none'}:{}
     return (
     <div className="containerr">
        <form className="asdasdform" onSubmit={this.handleSubmit}>
       <div className="form-group">
-        <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required></input>
+        <input type="text" className="form-control" placeholder="Product" id="exampleInputEmail1" aria-describedby="emailHelp" required></input>
       </div>
       <div className="form-group">
-        <input type="text" className="form-control" id="exampleInputPassword1" required></input>
+        <input type="text" className="form-control" placeholder="price" id="exampleInputPassword1" required></input>
       </div>
       <div className="form-group form-check">
       </div>
@@ -143,6 +171,17 @@ class App extends Component {
           </h1>
         </div>
      </div>
+     <form className="formUpdate" onSubmit={this.handleSubmit2}>
+      <div className="form-group">
+        <input type="text" className="form-control" placeholder="Product" id="exampleInputEmail2" aria-describedby="emailHelp" required></input>
+      </div>
+      <div className="form-group">
+        <input type="text" className="form-control" placeholder="Price" id="exampleInputPassword2" required></input>
+      </div>
+      <div className="form-group form-check">
+      </div>
+      <button htmltype="button"  className="btn btn-outline-success btn-block">Edit Product</button>
+    </form>
       </div>
     </div>
   </div>
