@@ -112,7 +112,7 @@ handleSubmit2 = (e) => {
   }
   console.log(obj)
   
-  fetch(`http://localhost:4000/cuentas/${this.state.id}`, {
+  fetch(`https://backendmongoatlas.herokuapp.com/cuentas/${this.state.id}`, {
     method: 'PUT',
     body: JSON.stringify(obj), // data can be `string` or {object}!
     headers:{
