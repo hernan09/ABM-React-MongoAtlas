@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
-import { Menu, Icon } from 'antd';
-import { Layout } from 'antd';
-import { List, Typography } from 'antd';
+import { List } from 'antd';
 import { Button } from 'antd';
-import { Alert } from 'antd';
-import { Popover } from 'antd';
 import './App.css';
+import  NavComp  from './components/Nav';
 
 
-const { SubMenu } = Menu;
-const { Header, Footer, Sider, Content } = Layout;
-class App extends Component {
+
+
+
+class App extends React.Component {
   constructor(){
     super();
     this.state = {
       objs : [],
+      numeros:[1,2,3,4,5,6,7],
+      numero:String,
       id:String,
       load : false,
       item: String,
@@ -28,7 +28,7 @@ class App extends Component {
     this.setState({
       load:true
     })
-    fetch("https://backendmongoatlas.herokuapp.com/cuentas").then(resp =>resp.json()).then(data =>{
+    fetch(`http://localhost:4000/cuentas/${localStorage.getItem('pagina')}`).then(resp =>resp.json()).then(data =>{
       this.setState({
         objs:data,
         load:true
@@ -36,15 +36,19 @@ class App extends Component {
     
     })
    
-    /*
-    fetch(" http://www.omdbapi.com/?i=tt3896198&apikey=1f6f4390").then(resp=>resp.json()).then(pelis=>{
-       
-        this.setState({
-          pelis:pelis
-        })
-        console.log(this.state.pelis)
+    
+
+  }
+  pasarNumber(page){
+    console.log(page)
+    this.setState({
+      numero:page 
     })
-    */
+    console.log(this.state.numero)
+    localStorage.setItem('pagina',JSON.parse(this.state.numero))
+
+    window.location.reload();
+    
   }
   
    //BORRAR EL ELEMENTO
@@ -131,8 +135,10 @@ handleSubmit2 = (e) => {
 
   render(){
      const styles = this.state.load ? {display:'none'}:{}
+
     return (
     <div className="containerr">
+       <NavComp numbers = {this.state.numeros} callback={this.pasarNumber.bind(this)}></NavComp>
        <form className="asdasdform" onSubmit={this.handleSubmit}>
       <div className="form-group">
         <input type="text" className="form-control" placeholder="Product" id="exampleInputEmail1" aria-describedby="emailHelp" required></input>
@@ -180,7 +186,7 @@ handleSubmit2 = (e) => {
       </div>
       <div className="form-group form-check">
       </div>
-      <button htmltype="button"  className="btn btn-outline-success btn-block">Edit Product</button>
+      <button htmltype="button"  className="btn btn-outline-warning btn-block">Edit Product</button>
     </form>
       </div>
     </div>
