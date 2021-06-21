@@ -1,48 +1,46 @@
-.card--2 .card__img, .card--2 .card__img--hover {
+.card--2 .card__img,
+.card--2 .card__img--hover {
   background-image: url('./engra.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-body{
- background-image: url('./fondo3.jpg');
- background-position: center center;
- background-attachment: fixed;
- background-repeat: no-repeat;
- background-size: cover;
-
+body {
+  background-image: url('./fondo3.jpg');
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.containerr{
-  position: relative;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
- 
-
+.containerr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-input{
+.container__subform {
+  margin-top: 350px;
+}
+input {
   background-color: transparent !important;
-  
 }
-.ant-list-items{
+.ant-list-items {
   color: white;
 }
-.formUpdate{
+.formUpdate {
   position: relative;
   top: 10%;
   width: 50%;
   margin: auto;
 }
-.modal-content{
+.modal-content {
   background-color: transparent;
 }
-.modal-body{
+.modal-body {
   height: 500px;
-  
 }
-.asdasdform{
+.asdasdform {
   position: absolute;
   width: 30%;
   height: auto;
@@ -52,9 +50,8 @@ input{
   left: 0;
   margin: auto;
   top: 100px;
-
 }
-#cont{
+#cont {
   position: absolute;
   width: 300px;
   right: 0;
@@ -63,15 +60,14 @@ input{
   top: 300px;
 }
 
-#lista{
-    width: 300px;
-    position: absolute;
-    right: 0;
-    left: 0;
-    margin: auto;
-    
+#lista {
+  width: 300px;
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: auto;
 }
-#btnb{
+#btnb {
   position: absolute;
   right: 0;
   padding: 2px;
@@ -81,14 +77,13 @@ input{
   right: 90px;
   padding: 2px;
 }
-.ant-alert-banner{
+.ant-alert-banner {
   position: absolute;
   right: 0;
   left: 0;
   margin: auto;
   top: 700px;
   width: 300px !important;
-
 }
 
 /*cartita*/
@@ -119,17 +114,15 @@ input{
 }
 */
 
-
 .wrapper:hover > div,
 .wrapper:hover:before {
   transform: none;
 }
 
-
 .wrapper > div,
 .wrapper:before {
   will-change: transform;
-  transition: .3s transform cubic-bezier(.25,.46,.45,1);
+  transition: 0.3s transform cubic-bezier(0.25, 0.46, 0.45, 1);
 }
 .card__like {
   width: 18px;
@@ -137,12 +130,12 @@ input{
 
 .card__clock {
   width: 15px;
-vertical-align: middle;
-  fill: #AD7D52;
+  vertical-align: middle;
+  fill: #ad7d52;
 }
 .card__time {
   font-size: 12px;
-  color: #AD7D52;
+  color: #ad7d52;
   vertical-align: middle;
   margin-left: 5px;
 }
@@ -152,60 +145,58 @@ vertical-align: middle;
 }
 
 .card__img {
-visibility: hidden;
+  visibility: hidden;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
   height: 235px;
-border-top-left-radius: 12px;
-border-top-right-radius: 12px;
-
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }
 
 .card__info-hover {
   position: absolute;
   padding: 16px;
-width: 100%;
-opacity: 0;
-top: 0;
+  width: 100%;
+  opacity: 0;
+  top: 0;
 }
 
 .card__img--hover {
-transition: 0.2s all ease-out;
+  transition: 0.2s all ease-out;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-position: absolute;
+  position: absolute;
   height: 250px;
-border-top-left-radius: 12px;
-border-top-right-radius: 12px;
-top: 0;
-
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  top: 0;
 }
 .card {
-margin-right: 25px;
-transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
-background-color: #fff;
+  margin-right: 25px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
+  background-color: #fff;
   width: 100%;
   height: 485px;
-position: relative;
-border-radius: 12px;
-overflow: hidden;
-box-shadow: 0px 13px 10px -7px rgba(0, 0, 0,0.1);
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
 }
 .card:hover {
-box-shadow: 0px 30px 18px -8px rgba(0, 0, 0,0.1);
-  transform: scale(1.10, 1.10);
+  box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.1, 1.1);
 }
 
 .card__info {
-z-index: 2;
-background-color: #fff;
-border-bottom-left-radius: 12px;
-border-bottom-right-radius: 12px;
- padding: 16px 24px 24px 24px;
+  z-index: 2;
+  background-color: #fff;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  padding: 16px 24px 24px 24px;
 }
 
 .card__category {
@@ -214,7 +205,7 @@ border-bottom-right-radius: 12px;
   font-size: 13px;
   letter-spacing: 2px;
   font-weight: 500;
-color: #868686;
+  color: #868686;
 }
 
 .card__title {
@@ -232,7 +223,7 @@ color: #868686;
 .card__author {
   font-weight: 600;
   text-decoration: none;
-  color: #AD7D52;
+  color: #ad7d52;
 }
 
 .card:hover .card__img--hover {
@@ -248,6 +239,3 @@ color: #868686;
 .card:hover .card__info-hover {
   opacity: 1;
 }
-
-
-
